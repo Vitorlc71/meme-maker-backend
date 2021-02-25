@@ -2,6 +2,12 @@ import { Router } from 'express'
 import axios from 'axios'
 import qs from 'qs'
 import env from 'dotenv'
+import express from 'express'
+import cors from 'cors'
+
+const app = express()
+
+app.use(cors())
 
 env.config()
 
