@@ -6,7 +6,10 @@ import bodyParser from 'body-parser'
 const app = express()
 
 app.use(cors({
-    origin: '*'
+    origin: '*',
+    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+    preflightContinue: false,
+    optionsSuccessStatus: 204
 }))
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({
