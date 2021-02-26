@@ -18,7 +18,7 @@ routes.get('/', async (req, res) => {
     }
 })
 
-routes.post('/getmemes', async (req, res) => {
+routes.post('/', async (req, res) => {
 
     const { template_id, boxes } = req.body
 
