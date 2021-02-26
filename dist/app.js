@@ -13,6 +13,7 @@ app.use(body_parser_1.default.json());
 app.use(function (req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Methods", "GET,POST,PUT,DELETE");
+    res.header('Access-Control-Allow-Headers: Origin, Content-Type, application/json');
     app.use(cors_1.default());
     next();
 });
@@ -20,4 +21,4 @@ app.use(body_parser_1.default.urlencoded({
     extended: true
 }));
 app.use(routes_1.default);
-app.listen(PORT);
+app.listen(PORT || 3333);

@@ -57,7 +57,7 @@ routes.get('/', function (req, res) { return __awaiter(void 0, void 0, void 0, f
         return [2 /*return*/];
     });
 }); });
-routes.post('/getmemes', function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
+routes.post('/', function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
     var _a, template_id, boxes, meme, resp, data, error_1;
     return __generator(this, function (_b) {
         switch (_b.label) {
