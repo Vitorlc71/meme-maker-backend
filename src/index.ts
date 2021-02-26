@@ -3,6 +3,7 @@ import routes from './routes'
 import cors from 'cors'
 import bodyParser from 'body-parser'
 
+const PORT = process.env.PORT || 3333
 const app = express()
 app.use(bodyParser.json())
 
@@ -17,4 +18,4 @@ app.use(bodyParser.urlencoded({
 }))
 app.use(routes)
 
-app.listen(3333)
+app.listen(PORT)
