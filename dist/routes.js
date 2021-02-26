@@ -69,6 +69,7 @@ routes.post('/', function (req, res) { return __awaiter(void 0, void 0, void 0, 
                     password: process.env.PASSWORD,
                     boxes: boxes
                 });
+                console.log(meme);
                 _b.label = 1;
             case 1:
                 _b.trys.push([1, 3, , 4]);

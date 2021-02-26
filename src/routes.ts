@@ -28,6 +28,7 @@ routes.post('/', async (req, res) => {
         password: process.env.PASSWORD,
         boxes: boxes
     })
+    console.log(meme)
 
     try {
         const resp = await axios.post(`https://api.imgflip.com/caption_image?${meme}`)
