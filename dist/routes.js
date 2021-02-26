@@ -58,18 +58,17 @@ routes.get('/', function (req, res) { return __awaiter(void 0, void 0, void 0, f
     });
 }); });
 routes.post('/', function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
-    var _a, template_id, boxes, meme, resp, data, error_1;
+    var _a, template_id, username, password, boxes, meme, resp, data, error_1;
     return __generator(this, function (_b) {
         switch (_b.label) {
             case 0:
-                _a = req.body, template_id = _a.template_id, boxes = _a.boxes;
+                _a = req.body, template_id = _a.template_id, username = _a.username, password = _a.password, boxes = _a.boxes;
                 meme = qs_1.default.stringify({
                     template_id: template_id,
-                    username: process.env.USER,
-                    password: process.env.PASSWORD,
+                    username: username,
+                    password: password,
                     boxes: boxes
                 });
-                console.log(meme);
                 _b.label = 1;
             case 1:
                 _b.trys.push([1, 3, , 4]);

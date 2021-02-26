@@ -20,15 +20,14 @@ routes.get('/', async (req, res) => {
 
 routes.post('/', async (req, res) => {
 
-    const { template_id, boxes } = req.body
+    const { template_id, username, password, boxes } = req.body
 
     const meme = qs.stringify({
         template_id: template_id,
-        username: process.env.USER,
-        password: process.env.PASSWORD,
+        username: username,
+        password: password,
         boxes: boxes
     })
-    console.log(meme)
 
     try {
         const resp = await axios.post(`https://api.imgflip.com/caption_image?${meme}`)
