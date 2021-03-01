@@ -57,21 +57,21 @@ routes.get('/', function (req, res) { return __awaiter(void 0, void 0, void 0, f
         return [2 /*return*/];
     });
 }); });
-routes.post('/', function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
+routes.post('/getmeme', function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
     var _a, template_id, username, password, boxes, meme, resp, data, error_1;
     return __generator(this, function (_b) {
         switch (_b.label) {
             case 0:
+                _b.trys.push([0, 3, , 4]);
                 _a = req.body, template_id = _a.template_id, username = _a.username, password = _a.password, boxes = _a.boxes;
-                meme = qs_1.default.stringify({
-                    template_id: template_id,
-                    username: username,
-                    password: password,
-                    boxes: boxes
-                });
-                _b.label = 1;
+                return [4 /*yield*/, qs_1.default.stringify({
+                        template_id: template_id,
+                        username: username,
+                        password: password,
+                        boxes: boxes
+                    })];
             case 1:
-                _b.trys.push([1, 3, , 4]);
+                meme = _b.sent();
                 return [4 /*yield*/, axios_1.default.post("https://api.imgflip.com/caption_image?" + meme)];
             case 2:
                 resp = _b.sent();

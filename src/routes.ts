@@ -11,25 +11,25 @@ routes.get('/', async (req, res) => {
     try {
 
         axios.get('https://api.imgflip.com/get_memes')
-        .then(resp => res.send(resp.data.data.memes))
+            .then(resp => res.send(resp.data.data.memes))
 
     } catch (error) {
         console.log(error)
     }
 })
 
-routes.post('/', async (req, res) => {
-
-    const { template_id, username, password, boxes } = req.body
-
-    const meme = qs.stringify({
-        template_id: template_id,
-        username: username,
-        password: password,
-        boxes: boxes
-    })
+routes.post('/getmeme', async (req, res) => {
 
     try {
+        const { template_id, username, password, boxes } = req.body
+
+        const meme = await qs.stringify({
+            template_id: template_id,
+            username: username,
+            password: password,
+            boxes: boxes
+        })
+
         const resp = await axios.post(`https://api.imgflip.com/caption_image?${meme}`)
         const { data } = resp
         res.send(data)
