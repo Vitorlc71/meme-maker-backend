@@ -10,8 +10,8 @@ const routes = Router()
 routes.get('/', async (req, res) => {
     try {
 
-        axios.get('https://api.imgflip.com/get_memes')
-            .then(resp => res.send(resp.data.data.memes))
+        const resp = await axios.get('https://api.imgflip.com/get_memes')
+        res.send(resp.data.data.memes)
 
     } catch (error) {
         console.log(error)

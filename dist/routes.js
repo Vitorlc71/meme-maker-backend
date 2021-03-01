@@ -46,19 +46,26 @@ var dotenv_1 = __importDefault(require("dotenv"));
 dotenv_1.default.config();
 var routes = express_1.Router();
 routes.get('/', function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
+    var resp, error_1;
     return __generator(this, function (_a) {
-        try {
-            axios_1.default.get('https://api.imgflip.com/get_memes')
-                .then(function (resp) { return res.send(resp.data.data.memes); });
+        switch (_a.label) {
+            case 0:
+                _a.trys.push([0, 2, , 3]);
+                return [4 /*yield*/, axios_1.default.get('https://api.imgflip.com/get_memes')];
+            case 1:
+                resp = _a.sent();
+                res.send(resp.data.data.memes);
+                return [3 /*break*/, 3];
+            case 2:
+                error_1 = _a.sent();
+                console.log(error_1);
+                return [3 /*break*/, 3];
+            case 3: return [2 /*return*/];
         }
-        catch (error) {
-            console.log(error);
-        }
-        return [2 /*return*/];
     });
 }); });
 routes.post('/getmeme', function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
-    var _a, template_id, username, password, boxes, meme, resp, data, error_1;
+    var _a, template_id, username, password, boxes, meme, resp, data, error_2;
     return __generator(this, function (_b) {
         switch (_b.label) {
             case 0:
@@ -79,8 +86,8 @@ routes.post('/getmeme', function (req, res) { return __awaiter(void 0, void 0, v
                 res.send(data);
                 return [3 /*break*/, 4];
             case 3:
-                error_1 = _b.sent();
-                console.log(error_1);
+                error_2 = _b.sent();
+                console.log(error_2);
                 return [3 /*break*/, 4];
             case 4: return [2 /*return*/];
         }
